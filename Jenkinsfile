@@ -1,15 +1,16 @@
 pipeline {
     agent any
     stages {
-        stage ('test') {
+        stage ('initialize') {
             steps {
-                echo "testing the app"
-                sh 'npm run test'
+                echo "initializing the app"
+                sh 'npm install'
             }
         }
-        stage ('end') {
+        stage ('test') {
             steps {
-                echo "closing out"
+                echo "testing the app ..."
+                sh 'npm run test'
             }
         }
     }
