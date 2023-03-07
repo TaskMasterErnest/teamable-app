@@ -16,7 +16,7 @@ pipeline {
                 }
             }
         }
-        stage {
+        stage ('build and push') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker-creds', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
                     sh "docker build -t teamable-app:v1.0.0 ."
