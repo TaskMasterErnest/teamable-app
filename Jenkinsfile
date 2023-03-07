@@ -18,7 +18,7 @@ pipeline {
         }
         stage ('build and push') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'docker-creds', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
+                withCredentials([usernamePassword(credentialsId: 'docker-hub-creds', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
                     sh "docker build -t teamable-app:v1.0.0 ."
                     sh "echo $PASSWORD | docker login -u $USERNAME --passsword-stdin"
                     sh "docker tag teamable-app:v1.0.0 ernestklu/teamable-app:v1.0.0"
