@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import image from "./profile.jpeg"
+import image from "./jira_pfp.jpeg"
 export default {
     name: "App",
     data() {
