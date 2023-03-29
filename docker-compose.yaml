@@ -3,7 +3,7 @@ services:
   teamable-app:
     image: teamable-dev:v1
     ports:
-      - 8080:8080
+      - 3000:3000
   mongodb:
     image: mongo
     environment: 
