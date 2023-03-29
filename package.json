@@ -2,17 +2,10 @@
   "name": "teamable",
   "version": "1.0.0",
   "dependencies": {
-<<<<<<< HEAD
     "vue":"^3.2.47",
     "core-js": "^3.28.0",
     "express": "^4.18.2",
     "mongodb": "^4.14.0"
-=======
-    "vue": "3.2.40",
-    "core-js": "3.25.5",
-    "express": "4.18.2",
-    "mongodb": "4.11.0"
->>>>>>> f5b8e55 (reviewed code extensively)
   },
   "devDependencies": {
     "@vue/compiler-sfc": "3.2.40",
