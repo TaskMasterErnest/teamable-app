@@ -2,35 +2,35 @@ const { isInvalidEmail, isEmptyPayload } = require('../validator')
 
 test('valid email', function() {
     const testPayload = {
-        name: "test.name",
+        name: "test name",
         email: "test.email@example.com",
-        interest: "test.interests"
+        interests: "testing"
     }
     const result = isInvalidEmail(testPayload)
     expect(result).toBe(false)
 })
 
-test('valid email', function() {
+test('invalid email', function() {
     const testPayload = {
-        name: "test.name",
+        name: "test name",
         email: "test.email",
-        interest: "test.interests"
+        interests: "testing"
     }
     const result = isInvalidEmail(testPayload)
     expect(result).toBe(true)
 })
 
 test('empty payload', function() {
-    testPayload = {}
+    const testPayload = {}
     const result = isEmptyPayload(testPayload)
     expect(result).toBe(true)
 })
 
-test('not empty payload', function() {
-    testPayload = {
-        name: "test.name",
-        email: "test.email",
-        interest: "test.interests"
+test('non-empty payload', function() {
+    const testPayload = {
+        name: "test name",
+        email: "test.email@example.com",
+        interests: "testing"
     }
     const result = isEmptyPayload(testPayload)
     expect(result).toBe(false)

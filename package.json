@@ -1,24 +1,29 @@
-{ 
+{
   "name": "teamable",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "dependencies": {
+<<<<<<< HEAD
     "vue":"^3.2.47",
     "core-js": "^3.28.0",
     "express": "^4.18.2",
     "mongodb": "^4.14.0"
+=======
+    "vue": "3.2.40",
+    "core-js": "3.25.5",
+    "express": "4.18.2",
+    "mongodb": "4.11.0"
+>>>>>>> f5b8e55 (reviewed code extensively)
   },
-  
   "devDependencies": {
-    "@vue/compiler-sfc": "^3.2.45",
-    "@vue/cli-service": "^5.0.8",
-    "jest": "^29.3.1",
-    "supertest": "^6.3.3"
+    "@vue/compiler-sfc": "3.2.40",
+    "@vue/cli-service": "5.0.8",
+    "jest": "29.2.2",
+    "supertest": "6.3.1"
   },
-
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "start": "node server.js",
-    "test": "jest --detectOpenHandles"
+    "test": "jest"
   }
 }

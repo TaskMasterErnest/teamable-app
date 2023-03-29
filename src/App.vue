@@ -1,6 +1,6 @@
 <template>
     <div v-show="!isEditMode">
-        <h1>User Profile</h1>
+        <h1>User profile</h1>
         <img :src="image">
         
         <span>Name: </span><b id="name">{{ name }}</b>
@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import image from "./jira_pfp.jpeg"
+import image from "./profile.jpeg"
 export default {
     name: "App",
     data() {
