@@ -20,12 +20,6 @@ services:
       - ME_CONFIG_MONGODB_SERVER=mongodb
     depends_on:
       - mongodb
-  app:
-    image: teamable-dev:v1
-    ports:
-      - 3000:3000
-    links:
-      - mongodb
 
 volumes:
   mongo-data:
