@@ -1,36 +1,37 @@
 version: "3.8"
 services:
-  mongodb:
+  db:
     image: mongo
-    environment: 
-      - MONGO_INITDB_ROOT_USERNAME=ernest
-      - MONGO_INITDB_ROOT_PASSWORD=admin
-    ports:
-      - 27017:27017
-  mongo-express:
-    image: mongo-express
     restart: always
-    ports:
-      - 8081:8081
-    volumes:
-      - mongo-data:/data/db
-    environment:
-      - ME_CONFIG_MONGODB_ADMINUSERNAME=ernest
-      - ME_CONFIG_MONGODB_ADMINPASSWORD=admin
-      - ME_CONFIG_MONGODB_SERVER=mongodb
-    depends_on:
-      - mongodb
-  app:
+    networks:
+      - appNetwork
+    
+  site:
     image: teamable-app:v1
     ports:
       - 3000:3000
+    depends_on:
+      - db
     environment:
-      - DB_HOST=mongodb
+      - DB_HOST=db
       - DB_PORT=27017
       - DB_NAME=company_db
-    depends_on:
-      - mongodb
+    networks:
+      - appNetwork
+  
+  express:
+    image: mongo-express
+    restart: always
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=db
+    ports:
+      - 8081:8081
+    networks:
+      - appNetwork
 
-volumes:
-  mongo-data:
-    driver: local
+networks:
+  appNetwork:
+    name: mongo-network
+    external: true
+
+   
