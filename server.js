@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const { MongoClient } = require('mongodb')
 const { isInvalidEmail, isEmptyPayload } = require('./validator')
 
-const url = 'mongodb://127.0.0.1:27017'
+const url = `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`
 const client = new MongoClient(url)
 const dbName = 'company_db'
 const collName = 'employees'
