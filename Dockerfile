@@ -4,6 +4,8 @@ WORKDIR /usr/src/app
 
 COPY package*.json ./
 
+# forcing Docker to download the latest npm
+RUN npm i -g npm@latest --force 
 RUN npm install
 
 COPY . . 
